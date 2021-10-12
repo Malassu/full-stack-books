@@ -17,9 +17,8 @@ from models import Book
 @app.route('/api/get_books', methods=['GET'])
 def get_books():
     """Fetch all books"""
-    results = []
-    events = Book.query.all()
-
+    books = Book.query.all()
+    results = [book.serialize() for book in books]
     return {'success': True, 'results': results}
 
 
