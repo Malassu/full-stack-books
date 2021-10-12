@@ -1,0 +1,8 @@
+wheel
+pylint
+flask==1.1.2
+python-dotenv
+flask_sqlalchemy
+flask_script
+flask_migrate
+psycopg2-binary
