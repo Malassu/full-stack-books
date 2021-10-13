@@ -91,7 +91,7 @@ export default function BookForm(args) {
           id="outlined-basic"
           label="Title *"
           variant="outlined"
-          error={titleError}
+          error={titleError !== ''}
           style={{ width: '80%' }}
           value={args.title}
           onChange={event => {
