@@ -37,7 +37,7 @@ def edit_book(db_id):
 
         return {"success": True, "result": book.serialize()}
     except ValueError:
-        return {'success': False, 'msg': 'Invalid db ID!'}
+        return {'success': False, 'msg': 'A DB error occurred! Check unsupported characters'}
     except KeyError:
         return {'success': False, 'msg': 'All fields were not provided!'}
     except UnicodeEncodeError:

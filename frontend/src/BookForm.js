@@ -95,8 +95,7 @@ export default function BookForm(args) {
           style={{ width: '80%' }}
           value={args.title}
           onChange={event => {
-            const { value } = event.target
-            args.setTitle(value)
+            args.setTitle(event.target.value)
           }}
         />
       </div>
@@ -108,8 +107,7 @@ export default function BookForm(args) {
           value={args.author}
           style={{ width: '80%' }}
           onChange={event => {
-            const { value } = event.target
-            args.setAuthor(value)
+            args.setAuthor(event.target.value)
           }}
         />
       </div>
@@ -121,8 +119,7 @@ export default function BookForm(args) {
           style={{ width: '80%' }}
           value={args.description}
           onChange={event => {
-            const { value } = event.target
-            args.setDescription(value)
+            args.setDescription(event.target.value)
           }}
         />
       </div>
