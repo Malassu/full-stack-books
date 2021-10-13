@@ -9,5 +9,5 @@ in the project root folder
 The database is available at port 5432 and the Python Flask backend is running at port 5000
 
 ## Linting and testing
-To execute code linting, run `npm run lint` in folder "frontend"
+To execute code linting, run `npm run lint` in folder "frontend".
 To execute unit tests, run `npm run test` in folder "frontend"
