@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  db:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.db
+    ports:
+      - "5432:5432"
+  backend:
+    depends_on:
+      - db
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        APP_SETTINGS: config.DevelopmentConfig
+    environment:
+      POSTGRES_DATABASE_URL: postgresql://docker:docker@db:5432/docker
+    command: bash -c "flask db init && flask db migrate && flask db upgrade && flask run --host 0.0.0.0"
+    ports:
+      - "5000:5000"
+  frontend:
+    depends_on:
+      - backend
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    ports:
+      - "80:3000"

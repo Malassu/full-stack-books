@@ -33,12 +33,15 @@ def edit_book(db_id):
         book.title = data['title']
         book.author = data['author']
         book.description = data['description']
+        db.session.commit()
 
         return {"success": True, "result": book.serialize()}
     except ValueError:
         return {'success': False, 'msg': 'Invalid db ID!'}
     except KeyError:
         return {'success': False, 'msg': 'All fields were not provided!'}
+    except UnicodeEncodeError:
+        return {'success': False, 'msg': 'Unsupported characters found!'}
 
 
 @app.route('/api/delete_book/<db_id>', methods=['DELETE'])
@@ -66,6 +69,8 @@ def add_book():
         return {"success": True, "result": book.serialize()}
     except KeyError:
         return {'success': False, 'msg': 'All fields were not provided!'}
+    except UnicodeEncodeError:
+        return {'success': False, 'msg': 'Unsupported characters found!'}
 
 
 if __name__ == '__main__':
