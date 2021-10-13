@@ -5,7 +5,8 @@ Application uses React on the frontend and Python Flask with Postgres DB on the 
 ## Running the application
 1. Execution requires: Docker and Docker Compose
 2. Run application locally by executing `docker-compose up` (optionally with `sudo` and `--build`)
-in the project root folder
+in the project root folder. Note: if you wish to rerun the application with Docker Compose after pressing CTRL+C,
+run `docker-compose down` before rerunning `docker-compose up`.
 3. Application can now be accessed at http://localhost (default HTTP port 80).
 The database is available at port 5432 and the Python Flask backend is running at port 5000
 
