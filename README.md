@@ -1,5 +1,6 @@
 # Full Stack Books
-Manage a collection of books
+Manage a collection of books.
+Application uses React on the frontend and Python Flask with Postgres DB on the backend.
 
 ## Running the application
 1. Execution requires: Docker and Docker Compose
